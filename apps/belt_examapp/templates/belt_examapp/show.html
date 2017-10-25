@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load staticfiles %}
+        <link href="{% static 'login/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <p><a href="/index">Dashboard</a> | <a href="/logout">Logout</a></p>
+        <h1><strong>Posted by: </strong>{{user.first_name}}</h1>
+        <h2><strong>Count: </strong> {{user.quote.all.count}}</h2>
+        <hr>
+        
+       
+        {% for quote in user.quote.all %}
+        <h3><a href="/User/{{first_name}}">{{quote.all}}</a></h3>
+        {% endfor %}
+    </body>
+</html>

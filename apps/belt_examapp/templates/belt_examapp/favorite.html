@@ -1,0 +1,51 @@
+<html>
+    <head>
+
+    </head>
+
+<body>
+<div class ="right"></div>
+        
+{% for Quote in quotes %}
+
+  
+  <p>{{quote.title}}</p>
+  <p>{{quote.created_at}}</p>
+  {% endfor %}
+
+    <h2>Your Favorite</h2>
+        
+        <form action='/favorite' method='POST'>
+            {% csrf_token %}
+            <textarea rows="4" cols="50"> </textarea>
+            <p></p>
+            <input type="submit" value="Remove From my List">  
+             </form>
+        
+            <form action='/favorite' method='POST'>
+             {% csrf_token %}
+            <textarea rows="4" cols="50"> </textarea>
+            <p></p>
+            <input type="submit" value="Remove From my List"> 
+            </form>
+        
+        
+        
+            </div>  
+            <h1>Contribute a quote</h1>
+            <div>
+                <form action='/create' method='POST'>
+                    {% csrf_token %}
+                    <p>Quoted By</p> <textarea rows="4" cols="50"> </textarea>
+                    <p></p>
+                    <p>Message:</p> <textarea rows="4" cols="50"> </textarea>
+                    <p></p>
+                    <input type="submit" value="Submit"> 
+                    </form>
+            
+        
+            </div>
+        
+        </div>
+            </body>
+        </html>
